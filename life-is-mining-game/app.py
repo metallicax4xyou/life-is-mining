@@ -6,9 +6,9 @@ app = Flask(__name__)
 @app.route('/dialogue/<node_id>')
 def get_dialogue(node_id):
     node = dialogue_tree.dialogue_tree.get(node_id)
-if node:
+    if node:
         return jsonify(node)
-else:
+    else:
         return jsonify({"error": "Node not found"}), 404
 
 if __name__ == '__main__':
